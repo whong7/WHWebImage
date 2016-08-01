@@ -39,6 +39,7 @@
 		10A906A21D4EE1F400D13ED9 /* WHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906A11D4EE1F400D13ED9 /* WHTableViewCell.m */; };
 		10A906A81D4F2D4400D13ED9 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906A71D4F2D4400D13ED9 /* NSString+path.m */; };
 		10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */; };
+		10FD05661D4FA2AD00DE1C1D /* WHDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,8 @@
 		10A906A71D4F2D4400D13ED9 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 		10A906B11D4F6D1A00D13ED9 /* WHDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDownloadManager.h; sourceTree = "<group>"; };
 		10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDownloadManager.m; sourceTree = "<group>"; };
+		10FD05641D4FA2AD00DE1C1D /* WHDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDownloadOperation.h; sourceTree = "<group>"; };
+		10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDownloadOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +300,8 @@
 			children = (
 				10A906B11D4F6D1A00D13ED9 /* WHDownloadManager.h */,
 				10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */,
+				10FD05641D4FA2AD00DE1C1D /* WHDownloadOperation.h */,
+				10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */,
 			);
 			path = WHWebImage;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				10A906991D4EE1B200D13ED9 /* UIButton+WebCache.m in Sources */,
 				10A906961D4EE1B200D13ED9 /* SDWebImageDownloaderOperation.m in Sources */,
 				10A906901D4EE1B200D13ED9 /* MKAnnotationView+WebCache.m in Sources */,
+				10FD05661D4FA2AD00DE1C1D /* WHDownloadOperation.m in Sources */,
 				10A906931D4EE1B200D13ED9 /* SDWebImageCompat.m in Sources */,
 				10A9068E1D4EE1B200D13ED9 /* AFURLResponseSerialization.m in Sources */,
 				10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */,

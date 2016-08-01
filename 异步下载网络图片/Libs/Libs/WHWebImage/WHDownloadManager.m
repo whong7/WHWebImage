@@ -8,6 +8,7 @@
 
 #import "WHDownloadManager.h"
 #import "NSString+path.h"
+#import "WHDownloadOperation.h"
 
 @interface WHDownloadManager ()
 
@@ -80,7 +81,13 @@
         }
         
         //MARK:4-创建一个操作下载图片
+        WHDownloadOperation *op = [WHDownloadOperation operationWithUrlString:urlString];
+        //MARK:5-将操作添加到队列
+        [self.queue addOperation:op];
+        
+        
         NSLog(@"创建操作去下载图片");
+        
         
     }
 

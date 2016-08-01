@@ -107,10 +107,10 @@
     cell.iconView.image = nil;
     
     // 测试断言
-     [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:nil];
-//    [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:^(UIImage *image) {
-//        cell.iconView.image = image;
-//    }];
+//     [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:nil];
+    [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:^(UIImage *image) {
+        cell.iconView.image = image;
+    }];
     
     return cell;
 }
