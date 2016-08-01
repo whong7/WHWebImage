@@ -54,6 +54,7 @@
         UIImage *cacheImage = self.imageCache[urlString];
         
         if (cacheImage != nil) {
+            NSLog(@"从内存中取");
             //MARK:1.1 如果有直接使用block将图片回调
             compeletion(cacheImage);
             return;
@@ -122,9 +123,31 @@
         self.operationCache = [NSMutableDictionary dictionary];
         self.queue = [NSOperationQueue new];
         
-//        // 注册内存警告的通知
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(memoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+        // 注册内存警告的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(memoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
 }
+
+
+/**
+ *  接收到内存警告的通知之后要做的事情
+ */
+- (void)memoryWarning {
+    NSLog(@"收到内存警告");
+    // 1. 清除图片
+    [self.imageCache removeAllObjects];
+    // 2. 清除操作
+    [self.operationCache removeAllObjects];
+    // 3. 取消队列中所有的操作
+    [self.queue cancelAllOperations];
+}
+
+/**
+ *  在此里面去移除通知,虽然当前是一个单例
+ */
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end
