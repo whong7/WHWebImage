@@ -1,5 +1,5 @@
 //
-//  HMDownloadManager.h
+//  WHDownloadManager.h
 //  异步下载网络图片
 //
 //  Created by whong7 on 16/8/1.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMDownloadManager : NSObject
+@interface WHDownloadManager : NSObject
 
 /**
  *  全局访问点

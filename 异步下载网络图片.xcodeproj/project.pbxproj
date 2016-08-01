@@ -38,7 +38,7 @@
 		10A9069F1D4EE1B200D13ED9 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906891D4EE1B200D13ED9 /* UIView+WebCacheOperation.m */; };
 		10A906A21D4EE1F400D13ED9 /* WHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906A11D4EE1F400D13ED9 /* WHTableViewCell.m */; };
 		10A906A81D4F2D4400D13ED9 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906A71D4F2D4400D13ED9 /* NSString+path.m */; };
-		10A906B31D4F6D1A00D13ED9 /* HMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906B21D4F6D1A00D13ED9 /* HMDownloadManager.m */; };
+		10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,8 +104,8 @@
 		10A906A11D4EE1F400D13ED9 /* WHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTableViewCell.m; sourceTree = "<group>"; };
 		10A906A61D4F2D4400D13ED9 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
 		10A906A71D4F2D4400D13ED9 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
-		10A906B11D4F6D1A00D13ED9 /* HMDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDownloadManager.h; sourceTree = "<group>"; };
-		10A906B21D4F6D1A00D13ED9 /* HMDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDownloadManager.m; sourceTree = "<group>"; };
+		10A906B11D4F6D1A00D13ED9 /* WHDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDownloadManager.h; sourceTree = "<group>"; };
+		10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDownloadManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,8 +295,8 @@
 		10A906AD1D4F6CA300D13ED9 /* WHWebImage */ = {
 			isa = PBXGroup;
 			children = (
-				10A906B11D4F6D1A00D13ED9 /* HMDownloadManager.h */,
-				10A906B21D4F6D1A00D13ED9 /* HMDownloadManager.m */,
+				10A906B11D4F6D1A00D13ED9 /* WHDownloadManager.h */,
+				10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */,
 			);
 			path = WHWebImage;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				10A906901D4EE1B200D13ED9 /* MKAnnotationView+WebCache.m in Sources */,
 				10A906931D4EE1B200D13ED9 /* SDWebImageCompat.m in Sources */,
 				10A9068E1D4EE1B200D13ED9 /* AFURLResponseSerialization.m in Sources */,
-				10A906B31D4F6D1A00D13ED9 /* HMDownloadManager.m in Sources */,
+				10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */,
 				10A906A81D4F2D4400D13ED9 /* NSString+path.m in Sources */,
 				10A9069B1D4EE1B200D13ED9 /* UIImage+MultiFormat.m in Sources */,
 				10A9069E1D4EE1B200D13ED9 /* UIImageView+WebCache.m in Sources */,

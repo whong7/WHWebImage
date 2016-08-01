@@ -11,6 +11,7 @@
 #import "WHAppInfo.h"
 #import "WHTableViewCell.h"
 #import "NSString+path.h"
+#import "WHDownloadManager.h"
 
 
 
@@ -105,6 +106,11 @@
     cell.downloadLabel.text = info.download;
     cell.iconView.image = nil;
     
+    // 测试断言
+    
+    [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:^(UIImage *image) {
+        cell.iconView.image = image;
+    }];
     
     return cell;
 }
