@@ -41,6 +41,14 @@
 
 - (void)downloadImageWithUrlString:(NSString *)urlString compeletion:(void(^)(UIImage *))compeletion 
     {
+        
+        
+        //MARK:断言
+        // 断言:可以判断条件是否成立,如果不成立,会崩溃
+        // 断言只作用于开发期间.给程序员使用的.程序一旦打包,该代码是不存在
+        NSAssert(compeletion != nil, @"必需传入会掉的block");
+        
+        
         //MARK:1-首先判断内存中有没有
         UIImage *cacheImage = self.imageCache[urlString];
         
