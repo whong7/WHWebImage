@@ -82,10 +82,30 @@
         
         //MARK:4-创建一个操作下载图片
         WHDownloadOperation *op = [WHDownloadOperation operationWithUrlString:urlString];
+        
+        __weak WHDownloadOperation *weakSelf = op;
+        // 4.1 如何监听图片下载完成
+        [op setCompletionBlock:^{//子线程中
+            // 取到图片
+            UIImage *image = weakSelf.image;
+            // 回到主线程调用block,将image传出去
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                // 保存到内存中一份
+                [self.imageCache setObject:image forKey:urlString];
+                // 将当前操作从缓存中移除
+                [self.operationCache removeObjectForKey:urlString];
+                compeletion(image);
+            }];
+        }];
+
+        
+        // 将操作添加到操作的缓存
+        [self.operationCache setObject:op forKey:urlString];
         //MARK:5-将操作添加到队列
         [self.queue addOperation:op];
         
         
+        //
         NSLog(@"创建操作去下载图片");
         
         
