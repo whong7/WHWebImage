@@ -15,7 +15,7 @@
 /**
  *  图片内存缓存
  */
-@property (nonatomic, strong) NSMutableDictionary *imageCache;
+@property (nonatomic, strong) NSCache *imageCache;
 
 /**
  *  操作缓存
@@ -51,7 +51,7 @@
         
         
         //MARK:1-首先判断内存中有没有
-        UIImage *cacheImage = self.imageCache[urlString];
+        UIImage *cacheImage = [self.imageCache objectForKey:urlString];
         
         if (cacheImage != nil) {
             NSLog(@"从内存中取");
@@ -131,7 +131,10 @@
     self = [super init];
     if (self) {
         // 初始化两个缓存&一个队列
-        self.imageCache = [NSMutableDictionary dictionary];
+        self.imageCache = [[NSCache alloc]init];
+        //设置最多只能缓存50张
+        self.imageCache.countLimit = 50;
+        
         self.operationCache = [NSMutableDictionary dictionary];
         self.queue = [NSOperationQueue new];
         
