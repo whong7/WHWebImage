@@ -41,6 +41,7 @@
 		10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */; };
 		10FD05661D4FA2AD00DE1C1D /* WHDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */; };
 		10FD18D51D503F39001D82AE /* UIImageView+WHWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD18D41D503F39001D82AE /* UIImageView+WHWebCache.m */; };
+		10FD18D81D5096DB001D82AE /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD18D71D5096DB001D82AE /* NSString+Hash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,8 @@
 		10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDownloadOperation.m; sourceTree = "<group>"; };
 		10FD18D31D503F39001D82AE /* UIImageView+WHWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WHWebCache.h"; sourceTree = "<group>"; };
 		10FD18D41D503F39001D82AE /* UIImageView+WHWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WHWebCache.m"; sourceTree = "<group>"; };
+		10FD18D61D5096DB001D82AE /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		10FD18D71D5096DB001D82AE /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +295,8 @@
 		10A906A51D4F2D4400D13ED9 /* CachePath */ = {
 			isa = PBXGroup;
 			children = (
+				10FD18D61D5096DB001D82AE /* NSString+Hash.h */,
+				10FD18D71D5096DB001D82AE /* NSString+Hash.m */,
 				10A906A61D4F2D4400D13ED9 /* NSString+path.h */,
 				10A906A71D4F2D4400D13ED9 /* NSString+path.m */,
 			);
@@ -398,6 +403,7 @@
 				10A9068E1D4EE1B200D13ED9 /* AFURLResponseSerialization.m in Sources */,
 				10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */,
 				10A906A81D4F2D4400D13ED9 /* NSString+path.m in Sources */,
+				10FD18D81D5096DB001D82AE /* NSString+Hash.m in Sources */,
 				10A9069B1D4EE1B200D13ED9 /* UIImage+MultiFormat.m in Sources */,
 				10A9069E1D4EE1B200D13ED9 /* UIImageView+WebCache.m in Sources */,
 				10A9068B1D4EE1B200D13ED9 /* AFNetworkReachabilityManager.m in Sources */,
