@@ -31,7 +31,8 @@
 }
 - (void)main {
     
-    // [NSThread sleepForTimeInterval:arc4random_uniform(10)];
+//      [NSThread sleepForTimeInterval:arc4random_uniform(5)];
+    
     
     // 1. 通过地址字符初始化NSURL
     NSURL *url = [NSURL URLWithString:self.urlString];

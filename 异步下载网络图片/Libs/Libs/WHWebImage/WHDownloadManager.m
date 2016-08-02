@@ -43,36 +43,36 @@
 
 - (void)downloadImageWithUrlString:(NSString *)urlString compeletion:(void(^)(UIImage *))compeletion 
     {
-//        
-//        //MARK:断言
-//        // 断言:可以判断条件是否成立,如果不成立,会崩溃
-//        // 断言只作用于开发期间.给程序员使用的.程序一旦打包,该代码是不存在
-//        NSAssert(compeletion != nil, @"必需传入会掉的block");
-//        
-//        
-//        //MARK:1-首先判断内存中有没有
-//        UIImage *cacheImage = self.imageCache[urlString];
-//        
-//        if (cacheImage != nil) {
-//            NSLog(@"从内存中取");
-//            //MARK:1.1 如果有直接使用block将图片回调
-//            compeletion(cacheImage);
-//            return;
-//        }
-//        
-//        
-//        //MARK:2-再判断沙盒中有没有
-//           //MARK:2.1-取到沙盒的路径
-//            NSString *sanboxPath = [urlString appendCachePath];
-//            cacheImage = [UIImage imageWithContentsOfFile:sanboxPath];
-//            if (cacheImage != nil) {
-//                NSLog(@"从沙盒中取");
-//                //MARK:2.2 如果沙盒中有,使用block将图片回调
-//                compeletion(cacheImage);
-//                //MARK:2.3 把图片保存到内存中一份,以便下次直接从内存中加载
-//                [self.imageCache setObject:cacheImage forKey:urlString];
-//                return;
-//            }
+        
+        //MARK:断言
+        // 断言:可以判断条件是否成立,如果不成立,会崩溃
+        // 断言只作用于开发期间.给程序员使用的.程序一旦打包,该代码是不存在
+        NSAssert(compeletion != nil, @"必需传入会掉的block");
+        
+        
+        //MARK:1-首先判断内存中有没有
+        UIImage *cacheImage = self.imageCache[urlString];
+        
+        if (cacheImage != nil) {
+            NSLog(@"从内存中取");
+            //MARK:1.1 如果有直接使用block将图片回调
+            compeletion(cacheImage);
+            return;
+        }
+        
+        
+        //MARK:2-再判断沙盒中有没有
+           //MARK:2.1-取到沙盒的路径
+            NSString *sanboxPath = [urlString appendCachePath];
+            cacheImage = [UIImage imageWithContentsOfFile:sanboxPath];
+            if (cacheImage != nil) {
+                NSLog(@"从沙盒中取");
+                //MARK:2.2 如果沙盒中有,使用block将图片回调
+                compeletion(cacheImage);
+                //MARK:2.3 把图片保存到内存中一份,以便下次直接从内存中加载
+                [self.imageCache setObject:cacheImage forKey:urlString];
+                return;
+            }
 
         
         //MARK:3-判断操作有没有
@@ -89,9 +89,12 @@
         // 4.1 如何监听图片下载完成
         [op setCompletionBlock:^{//子线程中
             
-            //图像错位调试
-            [NSThread sleepForTimeInterval:arc4random_uniform(10)];
-            
+            // 在下载之前判断该操作是否被取消
+            if (weakSelf.isCancelled) {
+                NSLog(@"下载----------------------前被取消");
+                return;
+            }
+        
             // 取到图片
             UIImage *image = weakSelf.image;
             
@@ -115,12 +118,9 @@
         [self.operationCache setObject:op forKey:urlString];
         //MARK:5-将操作添加到队列
         [self.queue addOperation:op];
-        
-        
-        //
+
         NSLog(@"创建操作去下载图片");
-        
-        
+  
     }
 
 
@@ -167,8 +167,9 @@
     // 2. 取消它
     if (op != nil) {
         [op cancel];
-        // 3. 将该操作从操作缓存中移除
-        [self.operationCache removeObjectForKey:urlString];
+        NSLog(@"操作---------------给取消喽");
+    // 3. 将该操作从操作缓存中移除
+    [self.operationCache removeObjectForKey:urlString];
     }
 }
 
