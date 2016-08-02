@@ -40,6 +40,7 @@
 		10A906A81D4F2D4400D13ED9 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906A71D4F2D4400D13ED9 /* NSString+path.m */; };
 		10A906B31D4F6D1A00D13ED9 /* WHDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */; };
 		10FD05661D4FA2AD00DE1C1D /* WHDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */; };
+		10FD18D51D503F39001D82AE /* UIImageView+WHWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD18D41D503F39001D82AE /* UIImageView+WHWebCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,8 @@
 		10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDownloadManager.m; sourceTree = "<group>"; };
 		10FD05641D4FA2AD00DE1C1D /* WHDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDownloadOperation.h; sourceTree = "<group>"; };
 		10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDownloadOperation.m; sourceTree = "<group>"; };
+		10FD18D31D503F39001D82AE /* UIImageView+WHWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WHWebCache.h"; sourceTree = "<group>"; };
+		10FD18D41D503F39001D82AE /* UIImageView+WHWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WHWebCache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +305,8 @@
 				10A906B21D4F6D1A00D13ED9 /* WHDownloadManager.m */,
 				10FD05641D4FA2AD00DE1C1D /* WHDownloadOperation.h */,
 				10FD05651D4FA2AD00DE1C1D /* WHDownloadOperation.m */,
+				10FD18D31D503F39001D82AE /* UIImageView+WHWebCache.h */,
+				10FD18D41D503F39001D82AE /* UIImageView+WHWebCache.m */,
 			);
 			path = WHWebImage;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				10A906941D4EE1B200D13ED9 /* SDWebImageDecoder.m in Sources */,
 				10A9069C1D4EE1B200D13ED9 /* UIImage+WebP.m in Sources */,
 				10A906971D4EE1B200D13ED9 /* SDWebImageManager.m in Sources */,
+				10FD18D51D503F39001D82AE /* UIImageView+WHWebCache.m in Sources */,
 				10A906321D4EDFBC00D13ED9 /* main.m in Sources */,
 				10A906921D4EE1B200D13ED9 /* SDImageCache.m in Sources */,
 			);

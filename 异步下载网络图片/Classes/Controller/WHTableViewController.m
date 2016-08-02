@@ -12,6 +12,7 @@
 #import "WHTableViewCell.h"
 #import "NSString+path.h"
 #import "WHDownloadManager.h"
+#import "UIImageView+WHWebCache.h"
 
 
 
@@ -21,21 +22,6 @@
  *  装有模型信息的数组
  */
 @property (nonatomic, strong) NSMutableArray *appInfos;
-/**
- *  操作
- */
-@property (nonatomic, strong) NSOperationQueue *queue;
-
-/**
- *  图片缓存的字典 <key: 图片地址, value: 图片>;
- */
-@property (nonatomic, strong) NSMutableDictionary *imageCache;
-
-/**
- *  下载操作的缓存,避免重复下载
- */
-@property (nonatomic, strong) NSMutableDictionary *queueCache;
-
 
 
 @end
@@ -106,11 +92,10 @@
     cell.downloadLabel.text = info.download;
     cell.iconView.image = nil;
     
+    
+    [cell.iconView wh_setImageWithUrlString:info.icon placeholderImage:[UIImage imageNamed:@"user_default"]];
     // 测试断言
 //     [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:nil];
-    [[WHDownloadManager sharedManager] downloadImageWithUrlString:info.icon compeletion:^(UIImage *image) {
-        cell.iconView.image = image;
-    }];
     
     return cell;
 }
@@ -128,57 +113,9 @@
 }
 
 
--(NSOperationQueue *)queue
-{
-    if(_queue == nil)
-    {
-        _queue = [NSOperationQueue new];
-    }
-    return _queue;
-}
-
-// 图片缓存的字典
-- (NSMutableDictionary *)imageCache {
-    if (_imageCache == nil) {
-        _imageCache = [NSMutableDictionary dictionary];
-    }
-    return _imageCache;
-}
-
-// 操作的缓存
-- (NSMutableDictionary *)queueCache {
-    if (_queueCache == nil) {
-        _queueCache = [NSMutableDictionary dictionary];
-    }
-    return _queueCache;
-}
-
-#pragma mark - 内存警告
-/**
- * 收到内存警告:
- 1. 将保存到内存中的图片清空
- - 如果图片保存到模型中的话,需要遍历模型数组,去给模型的image属性设置nil
- 2. 将队列中的操作全部取消
- */
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-    // 1. 清除掉内存中的image
-//        for (int i=0; i<self.appInfos.count; i++) {
-//            WHAppInfo *info = self.appInfos[i];
-//            info.image = nil;
-//        }
-    [self.imageCache removeAllObjects];
-    
-    // 2. 取消掉队列中的所有操作，停止下载
-    [self.queue cancelAllOperations];
-    // 3. 移除所有的操作
-    [self.queueCache removeAllObjects];
-}
-
 
 #pragma mark - 通过图片的址获取到缓存的路径
-
+//没什么用，自己仿写的，程序中没有用到
 - (NSString *)cachePathWithUrlString:(NSString *)urlString {
     // 1. 如果取到caceh目录
     NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true).firstObject;
