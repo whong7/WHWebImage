@@ -28,7 +28,7 @@
  *  @param compeletion <#compeletion description#>
  */
 - (void)downloadImageWithUrlString:(NSString *)urlString compeletion:(void(^)(UIImage *))compeletion;
-
+- (void)cancelOperationWithUrlString:(NSString *)urlString ;
 
 
 @end

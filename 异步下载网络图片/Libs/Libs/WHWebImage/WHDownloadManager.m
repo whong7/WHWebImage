@@ -160,4 +160,17 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - 取消指定操作
+- (void)cancelOperationWithUrlString:(NSString *)urlString {
+    // 1. 取到这个url对应的操作
+    NSOperation *op = [self.operationCache objectForKey:urlString];
+    // 2. 取消它
+    if (op != nil) {
+        [op cancel];
+        // 3. 将该操作从操作缓存中移除
+        [self.operationCache removeObjectForKey:urlString];
+    }
+}
+
+
 @end
